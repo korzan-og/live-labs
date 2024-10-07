@@ -40,6 +40,14 @@ In order to successfully complete this demo you need to install few tools before
 
 ### Confluent Cloud
 
+We need to remove the paywall from our trial account. To do that:
+- Click the hamburger manu from the upper right and click **Billing & Payment**.
+- Click **Enter Payment** from the blue banner
+- Click **Redeem your promo code**
+- Enter the promo code provided in the workshop.
+
+**If you skip this step, your terraform scripts may result in an error saying "402 Payment Required" **
+
 Create Confluent Cloud API keys by following [this](https://registry.terraform.io/providers/confluentinc/confluent/latest/docs/guides/sample-project#create-a-cloud-api-key) guide.
 
 > **Note:** This is different than Kafka cluster API keys.
