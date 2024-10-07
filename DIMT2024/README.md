@@ -214,7 +214,7 @@ Now that you have data flowing through Confluent, you can now easily build strea
 If you’re interested in learning more about Flink, you can take the Apache Flink 101 course on Confluent Developer [website](https://developer.confluent.io/courses/apache-flink/intro/).
 
 1.  Log into Confluent Cloud web UI, then click on **Data_In_Motion_Tour** environment.
-1.  Click on **Flink (preview)** and then **Open SQL workspace**.
+1.  Click on **Flink** and then **Open SQL workspace**.
 1.  On the top right corner of your workspace select **Data_In_Motion_Tour** as the catalog and **dimt_kafka_cluster** as your database.
 
     > **Note:** Refer to the [docs](https://docs.confluent.io/cloud/current/flink/index.html#metadata-mapping-between-ak-cluster-topics-schemas-and-af) to understand the mapping between Kafka and Flink.
@@ -297,7 +297,9 @@ If you’re interested in learning more about Flink, you can take the Apache Fli
         rating DOUBLE,
         PRIMARY KEY (id) NOT ENFORCED
     );
+     ```
 
+    ```sql
     INSERT INTO deduplicated_shoes(
         SELECT id, brand, name, sale_price, rating
         FROM (
@@ -330,7 +332,9 @@ If you’re interested in learning more about Flink, you can take the Apache Fli
         end_tstamp TIMESTAMP(3),
         avgViewTime INT
     );
-
+    ```
+    
+    ```sql
     INSERT INTO inactive_users
     SELECT *
     FROM clickstream
@@ -358,6 +362,9 @@ If you’re interested in learning more about Flink, you can take the Apache Fli
         last_name STRING,
         email STRING
     );
+    ```
+    
+    ```sql
     INSERT INTO inactive_customers_enriched
     	SELECT
     		u.user_id,
